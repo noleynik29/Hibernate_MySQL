@@ -35,14 +35,14 @@ public class ShoppingCartServiceHibernate extends SessionUtil implements Shoppin
     }
 
     @Override
-    public ShoppingCartHibernate getById(int idOrder, int idProduct) throws SQLException {
+    public ShoppingCartHibernate getById(int idShoppingCart) throws SQLException {
         openTransactionSession();
 
-        String sql = "SELECT * FROM shopping_cart WHERE idOrder = :idOrder";
+        String sql = "SELECT * FROM shopping_cart WHERE idShoppingCart = :idShoppingCart";
 
         Session session = getSession();
         Query query = session.createNativeQuery(sql).addEntity(ShoppingCartHibernate.class);
-        query.setParameter("idOrder", idOrder);
+        query.setParameter("idShoppingCart", idShoppingCart);
 
         ShoppingCartHibernate shoppingCartHibernate = (ShoppingCartHibernate) query.getSingleResult();
 

@@ -11,7 +11,7 @@ public interface ShoppingCartHibernateDAO {
     //read
     List<ShoppingCartHibernate> getAll() throws SQLException;
 
-    ShoppingCartHibernate getById(int idOrder, int idProduct) throws SQLException;
+    ShoppingCartHibernate getById(int idShoppingCart) throws SQLException;
     //update
     void update(ShoppingCartHibernate shoppingCartHibernate) throws SQLException;
     //delete
